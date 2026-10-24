@@ -201,3 +201,43 @@ h3.sub { font-size: 1rem; font-weight: 600; margin: 20px 0 6px; }
 
 .timeline .bullets { margin: 6px 0 0; padding-left: 18px; }
 .timeline .bullets li { display: list-item; padding: 0; border: 0; margin: 3px 0; }
+
+/* ---------- Logo stickers under the portrait ---------- */
+.side { display: flex; flex-direction: column; gap: 16px; }
+.stickers {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px;
+}
+.stickers li { position: relative; }
+.stickers a { display: block; position: relative; }
+.stickers img {
+  display: block; width: 100%; height: auto; aspect-ratio: 1;
+  border-radius: 12px; background: #fff;
+  box-shadow: 0 0 0 1px var(--border), 0 1px 2px rgba(0,0,0,.06), 0 3px 8px rgba(0,0,0,.05);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.stickers a:hover img, .stickers a:focus-visible img {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--border), 0 6px 14px rgba(0,0,0,.14);
+}
+/* tooltip */
+.stickers .tip {
+  position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translate(-50%, 4px);
+  width: max-content; max-width: 220px; padding: 6px 10px; border-radius: 8px;
+  background: var(--text); color: var(--bg); font-size: 0.75rem; line-height: 1.35; text-align: center;
+  opacity: 0; pointer-events: none; transition: opacity .15s, transform .15s; z-index: 5;
+}
+.stickers .tip strong { display: block; font-weight: 600; }
+.stickers a:hover .tip, .stickers a:focus-visible .tip { opacity: 1; transform: translate(-50%, 0); }
+.stickers li:nth-child(4n+1) .tip { left: 0; transform: translate(0, 4px); }
+.stickers li:nth-child(4n+1) a:hover .tip, .stickers li:nth-child(4n+1) a:focus-visible .tip { transform: none; }
+@media (prefers-color-scheme: dark) {
+  .stickers img { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 3px 10px rgba(0,0,0,.4); }
+}
+@media (max-width: 760px) {
+  .side { max-width: 360px; }
+  .stickers { grid-template-columns: repeat(7, 1fr); gap: 7px; }
+  .stickers li:nth-child(4n+1) .tip { left: 50%; transform: translate(-50%, 4px); }
+  .stickers li:first-child .tip { left: 0; transform: translate(0, 4px); }
+  .stickers li:last-child .tip { left: auto; right: 0; transform: translate(0, 4px); }
+}
