@@ -84,7 +84,7 @@ section { margin: 48px 0; }
 .news li { display: flex; gap: 16px; padding: 6px 0; }
 .news .date {
   flex: 0 0 auto; font-variant-numeric: tabular-nums; font-weight: 600;
-  color: var(--accent); min-width: 3em;
+  color: var(--accent); min-width: 5.2em;
 }
 
 /* ---------- Highlight cards ---------- */
@@ -140,3 +140,64 @@ footer p { font-size: 0.8rem; color: var(--muted); margin: 0; }
   .thumb { width: 96px; height: 72px; }
   .brand { display: none; }
 }
+
+/* ---------- Interests ---------- */
+.interests { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+.interests li {
+  font-size: 0.82rem; padding: 2px 10px; border-radius: 999px;
+  background: var(--tag-bg); color: var(--tag-text);
+}
+
+/* ---------- Highlight card extras ---------- */
+.card-img {
+  width: 100%; height: 130px; object-fit: contain; background: var(--thumb-bg);
+  border-radius: 6px; margin-bottom: 12px;
+}
+.card .meta { margin-bottom: 4px; }
+.card .stats { font-size: 0.88rem; font-weight: 600; color: var(--accent); margin: 0 0 12px; }
+.card .stats i { font-size: 0.8em; margin-right: 2px; }
+
+/* ---------- Publication stats + filters ---------- */
+.stats-line { color: var(--muted); margin: 0 0 12px; }
+.stats-line strong { color: var(--text); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+.filters button {
+  font: inherit; font-size: 0.88rem; cursor: pointer;
+  padding: 4px 14px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+}
+.filters button:hover { border-color: var(--accent); color: var(--text); }
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+[hidden] { display: none !important; }
+
+@media (max-width: 760px) {
+  .card-img { height: 150px; }
+}
+
+/* ---------- Experience timeline ---------- */
+.timeline { list-style: none; padding: 0; margin: 0; }
+.timeline li {
+  display: grid; grid-template-columns: 160px 1fr; gap: 20px;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.timeline li:last-child { border-bottom: none; }
+.timeline .when { color: var(--accent); font-weight: 600; font-size: 0.92rem; padding-top: 2px; }
+.timeline h3 { font-size: 1.05rem; font-weight: 600; margin: 0; }
+.timeline h3 a { color: var(--text); }
+.timeline .what { color: var(--muted); font-size: 0.95rem; }
+.timeline p { margin: 4px 0 0; }
+@media (max-width: 760px) {
+  .timeline li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* ---------- Talks / service ---------- */
+.talks .date { min-width: 5.2em; }
+.more { margin-top: 6px; }
+.more summary { cursor: pointer; color: var(--link); padding: 6px 0; }
+.more[open] summary { margin-bottom: 4px; }
+h3.sub { font-size: 1rem; font-weight: 600; margin: 20px 0 6px; }
+#service ul { margin: 0; padding-left: 20px; }
+#service li { margin: 3px 0; }
+
+.timeline .bullets { margin: 6px 0 0; padding-left: 18px; }
+.timeline .bullets li { display: list-item; padding: 0; border: 0; margin: 3px 0; }
