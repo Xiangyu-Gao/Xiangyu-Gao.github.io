@@ -145,3 +145,24 @@ a.th {
   display: inline-block;
   max-width: 100%; }
 
+
+/* Sidebar contact links with icons */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 2;
+}
+.icon-link i, .icon-link .svg-icon {
+  width: 1.1em;
+  height: 1.1em;
+  font-size: 1.1em;
+  margin-right: 0.5em;
+  text-align: center;
+}
+/* Scholar SVG fills its whole box, so draw it smaller to match the font icons */
+.icon-link .svg-icon {
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.125em;
+  margin-right: 0.625em;
+}
